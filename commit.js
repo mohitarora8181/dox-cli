@@ -27,20 +27,28 @@ exec('git diff', async (error, stdout, stderr) => {
             default: true
         }]).then((ans) => {
             if (ans.continue) {
-                try {
-                    exec(`git add . && git commit -m "${message}" && git push`, (error, stdout, stderr) => {
-                        if (error) {
-                            console.error(`Error: ${error.message}`);
-                            return;
-                        }
-                        if (stderr) {
-                            console.error(`Stderr: ${stderr}`);
-                        }
-                        console.log(`Output: ${stdout}`);
-                    });
-                } catch (e) {
-                    console.log(chalk.red(e));
-                }
+                prompt({
+                    type: 'input',
+                    name: 'branch',
+                    message: 'Enter branch name : ',
+                    default: 'master',
+                    required: true
+                }).then(({ branch }) => {
+                    try {
+                        exec(`git add . && git commit -m "${message.replace(/"/g, '\\"')}" && git push origin ${branch}`, (error, stdout, stderr) => {
+                            if (error) {
+                                console.error(`Error: ${error.message}`);
+                                return;
+                            }
+                            if (stderr) {
+                                console.error(`Stderr: ${stderr}`);
+                            }
+                            console.log(`Output: ${stdout}`);
+                        });
+                    } catch (e) {
+                        console.log(chalk.red(e));
+                    }
+                });
             }
         });
     });
