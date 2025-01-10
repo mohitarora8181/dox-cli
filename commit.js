@@ -12,6 +12,9 @@ exec('git diff', async (error, stdout, stderr) => {
         console.error(`Error executing git diff: ${error.message}`);
         return;
     }
+    if(stdout.length < 10){
+        console.log(chalk.blue("Did not see any code difference."))
+    }
     const message = await generateCommitName(stdout.slice(0, 100000));
     console.log(`Commit message is generated : ${chalk.green(message)}`);
     exec('git status -s', (err, status, stdout) => {
