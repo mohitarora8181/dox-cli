@@ -35,7 +35,7 @@ exec('git diff', async (error, stdout, stderr) => {
                     required: true
                 }).then(({ branch }) => {
                     try {
-                        exec(`git add . && git commit -m "${message.replace(/"/g, '\\"')}" && git push origin ${branch}`, (error, stdout, stderr) => {
+                        exec(`git add . && git commit -m ${message} && git push origin ${branch}`, (error, stdout, stderr) => {
                             if (error) {
                                 console.error(`Error: ${error.message}`);
                                 return;
