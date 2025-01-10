@@ -8,13 +8,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "dox": "./index.js"
+    "dox": "./index.js",
+    "comit": "./commit.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",
+    "child_process": "^1.0.2",
     "commander": "^13.0.0",
     "inquirer": "^12.3.0"
   }

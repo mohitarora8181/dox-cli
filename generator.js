@@ -51,4 +51,35 @@ async function generateReadme(prompt, fileData) {
     })
 }
 
-module.exports = { generateReadme }
+async function generateCommitName(diff) {
+    return fetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer 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`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            model: "llama-3.1-8b-instant",
+            messages: [
+                {
+                    role: "system",
+                    content: "You are AI bot for generating one liner commit message for all code difference provided."
+                },
+                {
+                    role: "user",
+                    content: `${diff} , tell me only one to three words commit message on basis of this code difference`
+                }
+            ]
+        })
+    }).then(async (res) => {
+        const resp = await res.json();
+        if (resp?.error) {
+            console.error(resp.error);
+            return false;
+        } else {
+            return resp.choices[0].message.content;
+        }
+    })
+}
+
+module.exports = { generateReadme, generateCommitName }
