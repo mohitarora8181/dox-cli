@@ -1,83 +1,45 @@
-**Readme Dox Generator**
-========================
+# ReadMe Generator
 
-**Description**
----------------
+## Project Title
+ReadMe generator
 
-Readme Dox Generator is a Node.js CLI tool used to generate professional README files based on user input and project files. The tool employs Markdown syntax for a neat and readable output.
+## Project Description
+it can automatically generate your readme using your coding files
 
-**Features**
-------------
+## Project Features
+- ai generation
+- time consuming
 
-- **Efficient Generation**: Fast and streamlined approach to generating README files.
-- **Markdown Applied**: Utilizes Markdown syntax for a clear and concise output.
-- **Proper README File**: Strictly generates a standard README file that follows best practices.
+## Purpose of the ReadMe Generator
 
-**Installation**
----------------
+The ReadMe generator is a tool designed to automatically generate ReadMe files based on user input and coding files. Its purpose is to ease the process of maintaining up-to-date and consistent ReadMe files for projects.
 
-```bash
-npm install -g @username/readme-dox-generator
-```
+## Usage
 
-**Usage**
----------
+To use the ReadMe generator, follow these steps:
 
-```bash
-rdg  # Run the CLI
-```
+### Step 1: Run the Script
 
-**Arguments**
-------------
-
-| Argument | Description |
-| --- | --- |
-| `--filename` | Specify the output file name. |
-
-**Example**
------------
+Run the script by navigating to the project directory and running the following command in your terminal:
 
 ```bash
-rdg --filename my-project
+node script_name.js -i path_to_coding_file
 ```
 
-This will generate a README file named `my-project.md` in the current directory. The file will be organized into sections and utilize Markdown syntax for a clear and readable format.
+### Step 2: Answer the Prompts
 
-**Commit Messages**
--------------------
+The script will then prompt the user to input the following information:
 
-Use the following commit message formats:
+- Project title
+- Project description
+- Project features
+
+### Step 3: Review and Save
+
+Once the user has input the required information, the script will generate a ReadMe file based on the user's input and coding file. The generated ReadMe file will be saved in the same directory as the script.
+
+## Example Coding File
+```javascript
+# code that can be included in the ReadMe file
 ```
-feat: Add feature X
-fix: Fix bug Y
-docs: Update README
-style: Update code formatting
-refactor: Refactor code
-perf: Improve performance
-test: Add test for feature X
-chore: Update dependencies
-```
-**License**
-----------
-
-MIT License
-
-Copyright (c) [Current Year] [Your Name]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Note: The example above assumes that the `generateReadme` function is properly implemented in the `./generator.js` file.

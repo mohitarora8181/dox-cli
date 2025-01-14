@@ -12,7 +12,7 @@ exec('git diff', async (error, stdout, stderr) => {
         console.error(`Error executing git diff: ${error.message}`);
         return;
     }
-    if(stdout.length < 10){
+    if (stdout.length < 10) {
         console.log(chalk.blue("Did not see any code difference."));
         return;
     }
@@ -39,7 +39,7 @@ exec('git diff', async (error, stdout, stderr) => {
                     required: true
                 }).then(({ branch }) => {
                     try {
-                        exec(`git add . && git commit -m ${message.toString()} && git push origin ${branch}`, (error, stdout, stderr) => {
+                        exec(`git add . && git commit -m "${message.replace('"', '')}" && git push origin ${branch}`, (error, stdout, stderr) => {
                             if (error) {
                                 console.error(`Error: ${error.message}`);
                                 return;
@@ -52,8 +52,12 @@ exec('git diff', async (error, stdout, stderr) => {
                     } catch (e) {
                         console.log(chalk.red(e));
                     }
+                }).catch(e => {
+                    console.log(e.message)
                 });
             }
+        }).catch(e => {
+            console.log(e.message)
         });
     });
 });

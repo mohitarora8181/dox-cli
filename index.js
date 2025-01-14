@@ -4,7 +4,7 @@ const chalk = require("chalk");
 const path = require("path");
 const inquirer = require("inquirer");
 const { generateReadme } = require("./generator.js");
-const { Command } = require("commander")
+const { Command } = require("commander");
 
 const program = new Command();
 
@@ -67,4 +67,6 @@ prompt(
     if (await generateReadme(content,codefile)) {
         console.log(chalk.green("Readme Created"));
     }
+}).catch(e=>{
+    console.log(e.message)
 });

@@ -9,7 +9,7 @@
   },
   "bin": {
     "dox": "./index.js",
-    "comit": "./commit.js"
+    "cmt": "./commit.js"
   },
   "keywords": [],
   "author": "",
