@@ -47,11 +47,11 @@ prompt(
     3) Installation Instructions, 
     4) Usage Guide, 
     5) Project Structure, 
-    6) API Documentation (if applicable), 
+    6) API Documentation (if available), 
     7) Key Features, 
     8) Environment Variables, 
     9) Contributing Guidelines, 
-    10) License. 
+    10) License (Keep it short). 
 
     Title of the project : ${ans.title} , description ( if available ) : ${ans.description} , Features ( if available ) : ${ans.feature} ,
     

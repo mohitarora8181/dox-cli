@@ -1,98 +1,138 @@
 # Readme Generator
-==================
+=====================================
 
-### Project Title & Description
+## 1. Project Title & Description
+---------------
 
-A Readme generator is a command-line utility to automate the creation of high-quality `README.md` files for projects.
+### Project Title: 
+Readme Generator
 
-### Table of Contents
+### Project Description: 
+A tool to automate the generation of README files for projects.
 
-* [Installation Instructions](#installation-instructions)
-* [Usage Guide](#usage-guide)
-* [Project Structure](#project-structure)
-* [API Documentation](#api-documentation)
-* [Key Features](#key-features)
-* [Environment Variables](#environment-variables)
-* [Contributing Guidelines](#contributing-guidelines)
-* [License](#license)
+### Features: 
+Automated README generation, customizable template support, easy updates.
 
-### Installation Instructions
+## 2. Table of Contents
+---------------
 
-To install the Readme Generator, use the following command:
+### [Top](#project-title---description)
+
+1. [Project Title & Description](#project-title---description)
+2. [Table of Contents](#table-of-contents)
+3. [Installation Instructions](#installation-instructions)
+4. [Usage Guide](#usage-guide)
+5. [Project Structure](#project-structure)
+6. [API Documentation](#api-documentation)
+7. [Key Features](#key-features)
+8. [Environment Variables](#environment-variables)
+9. [Contributing Guidelines](#contributing-guidelines)
+10. [License](#license)
+
+## 3. Installation Instructions
+--------------------
+
+### Prerequisites
+
+- Node.js (v16.17.0 or higher)
+- npm (v8.15.0 or higher)
 
 ```bash
-npm install @readme-generator/cli
+# Clone the repository
+git clone https://github.com/your-username/Readme-Generator.git
+
+# Navigate to the project directory
+cd Readme-Generator
+
+# Install dependencies
+npm install
 ```
 
-### Usage Guide
+## 4. Usage Guide
+---------------
 
-After installation, you can use the `readme-generator` command to create a `README.md` file:
+### Running the Application
 
 ```bash
-npx readme-generator
+# Run the application
+npm start
 ```
 
-This will prompt you to answer a series of questions about your project. The generated `README.md` file will be located in the current working directory.
+### Generating a README File
 
-### Project Structure
+1. Run the application
+2. Follow the interactive prompts to configure the README file
+3. The README file will be generated in the `output` directory
+
+## 5. Project Structure
+-------------------
 
 ```markdown
-readme-generator/
-src/
-index.ts
-generate.js
-package.json
-README.md
+Readme-Generator/
+|- src/
+| |- index.js
+| |- generator.js
+|- utils/
+| |- template.js
+|- output/
+|- README.md
+|- package.json
+|- README.md
 ```
 
-### API Documentation
+## 6. API Documentation
+------------------
 
-| Endpoint | Method | Description |
+### Endpoints
+
+| Method | Endpoint | Description |
 | --- | --- | --- |
-| `/generate` | POST | Generate a `README.md` file based on user input |
-| `/config` | GET | Retrieve the project configuration |
+| GET | /api/template | Get the README template |
+| POST | /api/generate | Generate a README file |
+| GET | /api/output | Get the generated README file |
 
-### Key Features
+### API Request/Response Examples
 
-* Command-line utility for automatically generating `README.md` files
-* Supports multiple project types (e.g., web app, library, etc.)
-* Customizable with user-provided information
+```bash
+# Get the README template
+curl http://localhost:3000/api/template
 
-### Environment Variables
+# Generate a README file
+curl -X POST -H "Content-Type: application/json" -d '{"template": "basic", "filename": "example.txt"}' http://localhost:3000/api/generate
 
-| Variable | Description | Default Value |
-| --- | --- | --- |
-| `README_FILE` | Path to the generated `README.md` file | `./README.md` |
-| `PROJECT_TYPE` | Project type (e.g., web app, library, etc.) | `web app` |
-
-### Contributing Guidelines
-
-Contributions are welcome! To get started, fork the repository and create a new branch. Submit a pull request with a clear description of the changes you made.
-
-### License
-
-This project is licensed under the MIT License.
-
-```markdown
-MIT License
-
-Copyright (c) 2023 Readme Generator
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+# Get the generated README file
+curl http://localhost:3000/api/output/example.txt
 ```
+
+## 7. Key Features
+----------------
+
+- **Automated README generation**: Create high-quality README files quickly and easily.
+- **Customizable template support**: Choose from a variety of templates or create your own.
+- **Easy updates**: Update your README file in just a few clicks.
+
+## 8. Environment Variables
+-------------------------
+
+### Mandatory Environment Variables
+
+- `OUTPUT_DIR`: The directory to save the generated README file.
+
+### Optional Environment Variables
+
+- `TEMPLATE`: The template to use for the README file.
+- `FILENAME`: The filename to use for the generated README file.
+
+## 9. Contributing Guidelines
+---------------------------
+
+1. Fork the repository.
+2. Make code changes.
+3. Run tests.
+4. Commit changes.
+5. Send a pull request.
+
+## 10. License
+--------------
+
+Readme Generator is licensed under the [MIT License](https://opensource.org/licenses/MIT).
