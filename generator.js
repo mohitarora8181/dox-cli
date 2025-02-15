@@ -50,7 +50,7 @@ async function generateCommitName(diff) {
             messages: [
                 {
                     role: "system",
-                    content: "You are AI bot for generating one liner commit message for all code difference provided."
+                    content: "You are AI bot for generating one liner commit message for all code difference provided and you can also add emoji according to relevant name."
                 },
                 {
                     role: "user",
