@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-async function generateReadme(prompt, fileData) {
+async function generateReadme(prompt) {
     return fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
         headers: {
@@ -9,27 +9,14 @@ async function generateReadme(prompt, fileData) {
         },
         body: JSON.stringify({
             model: "llama-3.1-8b-instant",
-            messages: fileData != "" ? [
-                {
-                    role: "system",
-                    content: "You are AI bot for generating Readme documentation for my project. Provide only direct answers. Do not add any conversational or assistant-related language"
-                },
-                {
-                    role: "user",
-                    content: `${fileData}`
-                },
-                {
-                    role: "user",
-                    content: `${prompt}`
-                }
-            ] : [
+            messages: [
                 {
                     role: "system",
                     content: "You are AI bot for generating Readme documentation for my project.Provide only direct answers. Do not add any conversational or assistant-related language"
                 },
                 {
                     role: "user",
-                    content: `${prompt} , strickly generate only proper readme file`
+                    content: `${prompt} , strickly generate only proper readme file.`
                 }
             ]
         })

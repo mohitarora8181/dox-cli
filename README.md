@@ -1,61 +1,98 @@
-Here is the Readme documentation:
+# Readme Generator
+==================
 
-# ReadMe Generator
+### Project Title & Description
 
-## Project Description
+A Readme generator is a command-line utility to automate the creation of high-quality `README.md` files for projects.
 
-ReadMe Generator is a tool that automatically generates high-quality Readme documentation for your projects. This tool is designed to save you time and effort by providing AI-generated content that is both informative and engaging.
+### Table of Contents
 
-## Features
+* [Installation Instructions](#installation-instructions)
+* [Usage Guide](#usage-guide)
+* [Project Structure](#project-structure)
+* [API Documentation](#api-documentation)
+* [Key Features](#key-features)
+* [Environment Variables](#environment-variables)
+* [Contributing Guidelines](#contributing-guidelines)
+* [License](#license)
 
-* **Fast Generation**: Generate your Readme documentation in a matter of seconds, saving you time and effort.
-* **Time Consuming**: Focus on other parts of your project while this tool does the heavy lifting.
-* **AI-Generated Content**: Our AI-powered generator ensures that your Readme documentation is of high quality and engaging.
+### Installation Instructions
 
-## Installation
+To install the Readme Generator, use the following command:
 
 ```bash
-npm install
+npm install @readme-generator/cli
 ```
 
-## Usage
+### Usage Guide
+
+After installation, you can use the `readme-generator` command to create a `README.md` file:
 
 ```bash
-node index.js
+npx readme-generator
 ```
 
-## Commands
+This will prompt you to answer a series of questions about your project. The generated `README.md` file will be located in the current working directory.
 
-*   `bin/dox`: Generate Readme documentation for your project.
-*   `bin/cmt`: Add commit messages to the generated Readme documentation.
+### Project Structure
 
-## Dependencies
+```markdown
+readme-generator/
+src/
+index.ts
+generate.js
+package.json
+README.md
+```
 
-*   `chalk`: Used for colored console output.
-*   `child_process`: Used for executing system commands.
-*   `commander`: Used for parsing command-line arguments.
-*   `inquirer`: Used for user input and prompts.
+### API Documentation
 
-## License
+| Endpoint | Method | Description |
+| --- | --- | --- |
+| `/generate` | POST | Generate a `README.md` file based on user input |
+| `/config` | GET | Retrieve the project configuration |
 
-ISC License
+### Key Features
 
-## Author
+* Command-line utility for automatically generating `README.md` files
+* Supports multiple project types (e.g., web app, library, etc.)
+* Customizable with user-provided information
 
-[Your Name]
+### Environment Variables
 
-## Keywords
+| Variable | Description | Default Value |
+| --- | --- | --- |
+| `README_FILE` | Path to the generated `README.md` file | `./README.md` |
+| `PROJECT_TYPE` | Project type (e.g., web app, library, etc.) | `web app` |
 
-readme, generator, ai, documentation
+### Contributing Guidelines
 
-## Version
+Contributions are welcome! To get started, fork the repository and create a new branch. Submit a pull request with a clear description of the changes you made.
 
-1.0.0
+### License
 
-## Main File
+This project is licensed under the MIT License.
 
-index.js
+```markdown
+MIT License
 
-## Type
+Copyright (c) 2023 Readme Generator
 
-CommonJS
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
