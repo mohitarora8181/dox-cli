@@ -50,11 +50,22 @@ async function generateCommitName(diff, isEmoji) {
             messages: [
                 {
                     role: "system",
-                    content: `You are AI bot for generating one liner commit message for all code difference provided ${isEmoji && "and you can also add emoji according to relevant name"}.`
+                    content: `You are AI bot for generating one word commit message for all code difference provided and ${isEmoji && "you can also add emoji according to relevant name"}.`
                 },
                 {
                     role: "user",
-                    content: `${diff} , strickly give me only one to three word commit message on basis of this code difference`
+                    content: `Generate a **concise** and **meaningful** Git commit message from the given Git diff.  
+                                ### Rules:
+                                - Output **only** the commit message (no explanations).  
+                                - Keep it **under 72 characters**.  
+                                - Use **imperative tone** (e.g., "Fix", "Add", "Improve", "Refactor").  
+                                - Follow **Conventional Commit format**: "<type>(<scope>): <message>".  
+                                - No additional text or formatting.  
+
+                                ### Git Diff:
+                                ${diff}
+
+                                Now, generate the commit message.`
                 }
             ]
         })
