@@ -4,7 +4,7 @@ async function generateReadme(prompt) {
     return fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
         headers: {
-            "Authorization": `Bearer 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`,
+            "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -42,7 +42,7 @@ async function generateCommitName(diff, isEmoji) {
     return fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
         headers: {
-            "Authorization": `Bearer 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`,
+            "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
