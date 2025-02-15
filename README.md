@@ -1,138 +1,102 @@
-# Readme Generator
-=====================================
+# Doxs Cli
+================
+README Generator and Commit Message Generator
+--------------------------------------------
 
-## 1. Project Title & Description
----------------
+Table of Contents
+-----------------
 
-### Project Title: 
-Readme Generator
+1. [Project Title & Description](#project-title-description)
+2. [Installation Instructions](#installation-instructions)
+3. [Usage Guide](#usage-guide)
+4. [Project Structure](#project-structure)
+5. [API Documentation](#api-documentation)
+6. [Key Features](#key-features)
+7. [Environment Variables](#environment-variables)
+8. [Contributing Guidelines](#contributing-guidelines)
+9. [License](#license)
 
-### Project Description: 
-A tool to automate the generation of README files for projects.
+### Project Title & Description
 
-### Features: 
-Automated README generation, customizable template support, easy updates.
+Doxs Cli is a command-line tool designed to generate high-quality README files and commit messages with ease. It is aimed at developers who value efficient development processes.
 
-## 2. Table of Contents
----------------
+### Installation Instructions
 
-### [Top](#project-title---description)
-
-1. [Project Title & Description](#project-title---description)
-2. [Table of Contents](#table-of-contents)
-3. [Installation Instructions](#installation-instructions)
-4. [Usage Guide](#usage-guide)
-5. [Project Structure](#project-structure)
-6. [API Documentation](#api-documentation)
-7. [Key Features](#key-features)
-8. [Environment Variables](#environment-variables)
-9. [Contributing Guidelines](#contributing-guidelines)
-10. [License](#license)
-
-## 3. Installation Instructions
---------------------
-
-### Prerequisites
-
-- Node.js (v16.17.0 or higher)
-- npm (v8.15.0 or higher)
+#### Install from npm
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/Readme-Generator.git
+npm install -g doxs-cli
+```
 
-# Navigate to the project directory
-cd Readme-Generator
+#### Install from GitHub (Clone and Link)
 
-# Install dependencies
+```bash
+git clone https://github.com/your-username/doxs-cli.git
+cd doxs-cli
 npm install
+npm link
 ```
 
-## 4. Usage Guide
----------------
+### Usage Guide
 
-### Running the Application
+Doxs Cli provides two primary commands:
+
+- `doxs init`: Initializes a new project by generating a basic README file and commit message.
+- `doxs update`: Updates the README file based on the project's changes.
 
 ```bash
-# Run the application
-npm start
+doxs init
+# or
+doxs update
 ```
 
-### Generating a README File
-
-1. Run the application
-2. Follow the interactive prompts to configure the README file
-3. The README file will be generated in the `output` directory
-
-## 5. Project Structure
--------------------
+### Project Structure
 
 ```markdown
-Readme-Generator/
-|- src/
-| |- index.js
-| |- generator.js
-|- utils/
-| |- template.js
-|- output/
-|- README.md
-|- package.json
-|- README.md
+Doxs Cli/
+config.js
+index.js
+package.json
+README.md
+templates/
+README.template.md
+commit.template
 ```
 
-## 6. API Documentation
-------------------
+### API Documentation
 
-### Endpoints
-
-| Method | Endpoint | Description |
+| Endpoint | Description | HTTP Method |
 | --- | --- | --- |
-| GET | /api/template | Get the README template |
-| POST | /api/generate | Generate a README file |
-| GET | /api/output | Get the generated README file |
+| `/generate` | Generates a README file based on project data | `POST` |
+| `/update` | Updates the README file based on project changes | `PUT` |
 
-### API Request/Response Examples
-
-```bash
-# Get the README template
-curl http://localhost:3000/api/template
-
-# Generate a README file
-curl -X POST -H "Content-Type: application/json" -d '{"template": "basic", "filename": "example.txt"}' http://localhost:3000/api/generate
-
-# Get the generated README file
-curl http://localhost:3000/api/output/example.txt
+Example API request (JSON):
+```json
+{
+  "title": "My Project",
+  "description": "High-quality documentation"
+}
 ```
 
-## 7. Key Features
-----------------
+### Key Features
 
-- **Automated README generation**: Create high-quality README files quickly and easily.
-- **Customizable template support**: Choose from a variety of templates or create your own.
-- **Easy updates**: Update your README file in just a few clicks.
+- **Easy-to-use interface**: Intuitive commands for generating high-quality README files and commit messages.
+- **Customizable templates**: Supports user-defined templates for README files and commit messages.
+- **Streamlined development**: Simplifies project documentation and commit message management.
 
-## 8. Environment Variables
--------------------------
+### Environment Variables
 
-### Mandatory Environment Variables
+| Variable | Description | Default Value |
+| --- | --- | --- |
+| ` TEMPLATE_DIR` | Path to template directory | `./templates` |
 
-- `OUTPUT_DIR`: The directory to save the generated README file.
+### Contributing Guidelines
 
-### Optional Environment Variables
+- Fork this repository on GitHub.
+- Create a new branch for your feature or bug fix.
+- Commit and push your changes.
+- Create a pull request.
 
-- `TEMPLATE`: The template to use for the README file.
-- `FILENAME`: The filename to use for the generated README file.
+### License
 
-## 9. Contributing Guidelines
----------------------------
-
-1. Fork the repository.
-2. Make code changes.
-3. Run tests.
-4. Commit changes.
-5. Send a pull request.
-
-## 10. License
---------------
-
-Readme Generator is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+Doxs Cli is released under the MIT License. See LICENSE.txt for details.
