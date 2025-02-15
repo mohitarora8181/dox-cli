@@ -1,102 +1,100 @@
-# Doxs Cli
-================
-README Generator and Commit Message Generator
---------------------------------------------
+# Project Title & Description
+### Docs Cli
+#### CLI tool for generating README and making perfect commits
 
-Table of Contents
------------------
+Fast and development friendly, Docs Cli is a command line interface tool designed to assist developers in creating optimized README files and committing their code with ease.
 
-1. [Project Title & Description](#project-title-description)
-2. [Installation Instructions](#installation-instructions)
-3. [Usage Guide](#usage-guide)
-4. [Project Structure](#project-structure)
-5. [API Documentation](#api-documentation)
-6. [Key Features](#key-features)
-7. [Environment Variables](#environment-variables)
-8. [Contributing Guidelines](#contributing-guidelines)
-9. [License](#license)
+## Table of Contents
 
-### Project Title & Description
+1. [Installation Instructions](#installation-instructions)
+2. [Usage Guide](#usage-guide)
+3. [Project Structure](#project-structure)
+4. [API Documentation](#api-documentation)
+5. [Key Features](#key-features)
+6. [Environment Variables](#environment-variables)
+7. [Contributing Guidelines](#contributing-guidelines)
+8. [License](#license)
 
-Doxs Cli is a command-line tool designed to generate high-quality README files and commit messages with ease. It is aimed at developers who value efficient development processes.
-
-### Installation Instructions
-
-#### Install from npm
-
+## Installation Instructions
 ```bash
-npm install -g doxs-cli
+# Install using npm
+npm install @docs-cmd/cli
+
+# Install using yarn
+yarn add @docs-cmd/cli
 ```
 
-#### Install from GitHub (Clone and Link)
-
+## Usage Guide
 ```bash
-git clone https://github.com/your-username/doxs-cli.git
-cd doxs-cli
-npm install
-npm link
+# Generate a README file
+docs-cli generate
+
+# Make a perfect commit
+docs-cli commit
 ```
 
-### Usage Guide
-
-Doxs Cli provides two primary commands:
-
-- `doxs init`: Initializes a new project by generating a basic README file and commit message.
-- `doxs update`: Updates the README file based on the project's changes.
-
-```bash
-doxs init
-# or
-doxs update
-```
-
-### Project Structure
-
+## Project Structure
 ```markdown
-Doxs Cli/
-config.js
-index.js
-package.json
-README.md
-templates/
-README.template.md
-commit.template
+docs-cli/
+├── src/
+│   ├── cli.js
+│   ├── README_generator.js
+│   └── commit_helper.js
+├── tests/
+│   └── README_generator.spec.js
+├── package.json
+└── README.md
 ```
 
-### API Documentation
+## API Documentation
 
-| Endpoint | Description | HTTP Method |
+### README Generator
+| Method | URL | Description |
 | --- | --- | --- |
-| `/generate` | Generates a README file based on project data | `POST` |
-| `/update` | Updates the README file based on project changes | `PUT` |
+| GET | /README | Generates a new README file |
 
-Example API request (JSON):
-```json
-{
-  "title": "My Project",
-  "description": "High-quality documentation"
-}
-```
-
-### Key Features
-
-- **Easy-to-use interface**: Intuitive commands for generating high-quality README files and commit messages.
-- **Customizable templates**: Supports user-defined templates for README files and commit messages.
-- **Streamlined development**: Simplifies project documentation and commit message management.
-
-### Environment Variables
-
-| Variable | Description | Default Value |
+### Commit Helper
+| Method | URL | Description |
 | --- | --- | --- |
-| ` TEMPLATE_DIR` | Path to template directory | `./templates` |
+| POST | /commit | Creates a new commit |
 
-### Contributing Guidelines
+## Key Features
 
-- Fork this repository on GitHub.
-- Create a new branch for your feature or bug fix.
-- Commit and push your changes.
-- Create a pull request.
+- Fast and efficient
+- Development friendly
+- Optimized README files
 
-### License
+## Environment Variables
 
-Doxs Cli is released under the MIT License. See LICENSE.txt for details.
+- `GEN_README`: Enable or disable README generation (`true` or `false`)
+- `COMMIT_MESSAGE`: Define a custom commit message
+
+## Contributing Guidelines
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/new-feature`)
+3. Make changes
+4. Commit changes (`docs-cli commit`)
+5. Push changes to origin (`git push origin feature/new-feature`)
+6. Open a pull request
+
+## License
+### MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
