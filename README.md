@@ -1,169 +1,97 @@
-# Doxc
------
-A high-performance, full-stack application for real-time collaboration and document management.
------
+# Doxs Cli 
+================
 
-## Table of Contents
-=================
-*   [Project Title & Description](#project-title-description)
-*   [Installation Instructions](#installation-instructions)
-*   [Usage Guide](#usage-guide)
-*   [Project Structure](#project-structure)
-*   [API Documentation](#api-documentation)
-*   [Key Features](#key-features)
-*   [Environment Variables](#environment-variables)
-*   [Contributing Guidelines](#contributing-guidelines)
-*   [License](#license)
+[![Doxs Cli](https://i.imgur.com/jbHim9y.png)](https://github.com/github/docs/)
 
-## Project Title & Description
+### Project Title & Description
+
+[Doxs Cli](https://github.com/yourrepository/DOXS) is a command-line tool designed to ease the process of generating README files and Commit Messages for developers. With features such as fast deployment and ease of use, Doxs Cli is a convenient solution for all your documentation needs.
+
+### Table of Contents
+---------------
+
+* [Installation Instructions](#installation-instructions)
+* [Usage Guide](#usage-guide)
+* [Project Structure](#project-structure)
+* [API Documentation](#api-documentation)
+* [Key Features](#key-features)
+* [Environment Variables](#environment-variables)
+* [Contributing Guidelines](#contributing-guidelines)
+* [License](#license)
+
+### Installation Instructions
 ---------------------------
 
-### Description
-
-Doxc is a scalable, secure, and feature-rich application for real-time collaboration and document management.
-
-## Installation Instructions
--------------------------
-
-### Requirements
-
-*   Node.js (version 14 or later)
-*   npm (version 6 or later)
-
-### Installation Commands
+You can install Doxs Cli using pip:
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
-
-# Navigate to the project directory
-cd your-repo-name
-
-# Install dependencies
-npm install
-
-# Run the application
-npm start
+pip install DOXS
 ```
 
-### Installation via Docker
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
-
-# Navigate to the project directory
-cd your-repo-name
-
-# Build the Docker image
-docker build -t doxc .
-
-# Run the Docker container
-docker run -p 8080:8080 doxc
-```
-
-## Usage Guide
+### Usage Guide
 -------------
 
-### Up and Running
-
-1.  Start the application using the installation commands provided above.
-2.  Open your preferred web browser and navigate to `http://localhost:8080`.
-
-### Core Features
-
-*   Real-time collaboration on documents and projects
-*   Secure authentication and authorization
-*   Document versioning and revision history
-
-## Project Structure
---------------------
-
-### Directory Tree
-
-```markdown
-doxc/
-├── src/
-│   ├── app/
-│   │   ├── controllers/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   └── services/
-│   ├── config/
-│   ├── database/
-│   ├── middlewares/
-│   └── utils/
-├── public/
-│   ├── index.html
-│   ├── styles/
-│   └── scripts/
-├── .env
-├── .gitignore
-├── package.json
-└── README.md
-```
-
-## API Documentation
--------------------
-
-### Endpoints
-
-| Method | Endpoint       | Description                       |
-| :----: | :------------: | :-------------------------------- |
-|  GET  |  `/docs`       | Retrieves a list of available docs |
-|  POST |  `/docs`       | Creates a new document            |
-|  GET  |  `/docs/:id`   | Retrieves a specific document     |
-|  PATCH|  `/docs/:id`   | Updates a specific document        |
-| DELETE|  `/docs/:id`   | Deletes a specific document        |
-
-### API Request Examples
+Here's a basic usage guide:
 
 ```bash
-# Retrieve a list of available documents
-curl -X GET http://localhost:8080/docs
-
-# Create a new document
-curl -X POST -H "Content-Type: application/json" \
-     -d '{"title": "My New Document"}' \
-     http://localhost:8080/docs
+DOXS generate README
+DOXS generate COMMIT
 ```
 
-## Key Features
--------------
+### Project Structure
+-----------------
 
-*   Real-time document synchronization
-*   User authentication and authorization
-*   Document versioning and revision history
+![Project Structure](https://raw.githubusercontent.com/software-engg-project/Others/main/folder_structure.png)
 
-## Environment Variables
------------------------
+### API Documentation
+-----------------
 
-### .env File
+No API endpoints available.
 
-```makefile
-PORT=8080
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=postgres
-DB_PASSWORD=mysecretpassword
-```
+### Key Features
+------------
 
-## Contributing Guidelines
--------------------------
+*   **Fast Deployment**: Quickly generate your README files and commit messages, making it an ideal solution for rapid project development.
+*   **Easy for Developers**: User-friendly design and seamless workflow make it a breeze for developers of all skill levels to create and maintain high-quality documentation.
 
-### Contributing to the Project
+### Environment Variables
+---------------------------
 
-1.  Fork the repository on GitHub.
-2.  Clone the forked repository to your local machine.
-3.  Create a new branch for your feature or bug fix.
-4.  Commit your changes and push the branch to your fork.
-5.  Open a pull request to the main repository.
+| Variable            | Description                                 |
+| :------------------ | :------------------------------------------- |
+| DOXS_HOST           | Doxs configuration host URL                 |
+| DOXS_PORT           | Doxs configuration port                     |
+| DOXS_USERNAME       | Doxs configuration username                 |
+| DOXS_COMMITMESSAGE  | Doxs configuration commit message           |
+| DOXS_READMEFILE     | Doxs configuration README file path/name   |
 
-## License
----------
+### Contributing Guidelines
+---------------------------
 
-Doxc is licensed under the MIT License.
+1.  Fork the repository and create your own branch.
+2.  Submit a pull request.
 
----
+### License
+------------
 
-Feel free to modify and expand this README as per your project's requirements. Happy coding!
+[MIT License](https://choosealicense.com/licenses/mit/)
+
+Copyright (c) [Your Name]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

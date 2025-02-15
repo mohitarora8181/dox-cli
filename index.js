@@ -22,11 +22,21 @@ program
     .description("CLI tool for generating README and making perfect commits")
     .version('1.0.0')
 
+program
+    .option("-k, --key <key>", "Groq API Key")
+    .parse(process.argv)
+
 const prompt = inquirer.createPromptModule();
 
+const options = program.opts();
 
-if (!process.env.GROQ_API_KEY) {
+if (!process.env.GROQ_API_KEY && options.key == undefined) {
     console.log(chalk.red("API key is not present , please add GROQ_API_KEY in your .env file"));
+    return;
+}
+
+if (options.key && !options.key.includes("gsk_")) {
+    console.log(chalk.red("API key is invalid"));
     return;
 }
 
@@ -39,9 +49,9 @@ prompt([
     },
 ]).then((answers) => {
     if (answers.action === "Generate README") {
-        makeReadme();
+        makeReadme(options.key);
     } else if (answers.action === "Make a Commit") {
-        makeCommit();
+        makeCommit(options.key);
     }
 }).catch(e => {
     console.log(e.message)

@@ -1,10 +1,10 @@
 const fs = require("fs");
 
-async function generateReadme(prompt) {
+async function generateReadme(prompt, key) {
     return fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
         headers: {
-            "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
+            "Authorization": `Bearer ${process.env.GROQ_API_KEY || key}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -38,11 +38,11 @@ async function generateReadme(prompt) {
     })
 }
 
-async function generateCommitName(diff, isEmoji) {
+async function generateCommitName(diff, isEmoji, key) {
     return fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
         headers: {
-            "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
+            "Authorization": `Bearer ${process.env.GROQ_API_KEY || key}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify({

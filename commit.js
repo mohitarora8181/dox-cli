@@ -5,7 +5,7 @@ const inquirer = require('inquirer');
 
 const prompt = inquirer.createPromptModule()
 
-function makeCommit() {
+function makeCommit(key) {
     let isEmoji = false;
     prompt([{
         type: 'confirm',
@@ -25,7 +25,7 @@ function makeCommit() {
                 console.log(chalk.blue("Did not see any code difference."));
                 return;
             }
-            const message = await generateCommitName(stdout.slice(0, 100000), isEmoji);
+            const message = await generateCommitName(stdout.slice(0, 100000), isEmoji,key);
             console.log(`Commit message is generated : ${chalk.green(message)}`);
             exec('git status -s', (err, status, stdout) => {
                 if (err) {

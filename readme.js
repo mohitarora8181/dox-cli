@@ -6,7 +6,7 @@ const { generateReadme } = require("./generator.js");
 const prompt = inquirer.createPromptModule();
 
 
-function makeReadme() {
+function makeReadme(key) {
     prompt(
         [{
             type: "input",
@@ -49,7 +49,7 @@ function makeReadme() {
         
         Use Markdown syntax properly, include code blocks for commands, structured tables for API endpoints, and a markdown-friendly project tree diagram. Ensure readability and clarity.`
 
-        if (await generateReadme(content)) {
+        if (await generateReadme(content, key)) {
             console.log(chalk.green("Readme Created"));
         }
     }).catch(e => {
