@@ -8,8 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "dox": "./index.js",
-    "cmt": "./commit.js"
+    "doxs": "./index.js"
   },
   "keywords": [],
   "author": "",
