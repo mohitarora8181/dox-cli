@@ -38,7 +38,7 @@ async function generateReadme(prompt) {
     })
 }
 
-async function generateCommitName(diff) {
+async function generateCommitName(diff, isEmoji) {
     return fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
         headers: {
@@ -50,7 +50,7 @@ async function generateCommitName(diff) {
             messages: [
                 {
                     role: "system",
-                    content: "You are AI bot for generating one liner commit message for all code difference provided and you can also add emoji according to relevant name."
+                    content: `You are AI bot for generating one liner commit message for all code difference provided and ${isEmoji && "you can also add emoji according to relevant name"}.`
                 },
                 {
                     role: "user",
