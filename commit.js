@@ -25,7 +25,7 @@ function makeCommit(key) {
                 console.log(chalk.blue("Did not see any code difference."));
                 return;
             }
-            const message = await generateCommitName(stdout.slice(0, 100000), isEmoji,key);
+            const message = await generateCommitName(stdout.slice(0, 20000), isEmoji,key);
             console.log(`Commit message is generated : ${chalk.green(message)}`);
             exec('git status -s', (err, status, stdout) => {
                 if (err) {

@@ -1,5 +1,6 @@
-# Docs Cli
+# Doxs Cli
 ------------
+![Doxs Banner](./banner.png)
 
 A Command Line Interface Tool for Generating READMEs and Perfect Commits
 
@@ -9,7 +10,6 @@ A Command Line Interface Tool for Generating READMEs and Perfect Commits
 *   [Installation Instructions](#installation-instructions)
 *   [Usage Guide](#usage-guide)
 *   [Project Structure](#project-structure)
-*   [API Documentation](#api-documentation)
 *   [Key Features](#key-features)
 *   [Environment Variables](#environment-variables)
 *   [Contributing Guidelines](#contributing-guidelines)
@@ -17,28 +17,22 @@ A Command Line Interface Tool for Generating READMEs and Perfect Commits
 
 ### Project Title & Description
 
-[Docs Cli](https://github.com/mohitarora8181/dox-cli) is a CLI tool designed to assist developers in creating optimized README files and committing their code with ease. It is designed to be ast and development friendly.
+[Doxs Cli](https://github.com/mohitarora8181/dox-cli) is a CLI tool designed to assist developers in creating optimized README files and committing their code with ease. It is designed to be ast and development friendly.
 
 ### Installation Instructions
 
-To install Docs Cli, run the following command:
+To install Doxs Cli, run the following command:
 
 ```bash
-npm install doxs
+npm install -g doxs
 ```
 
 ### Usage Guide
 
-To generate a README using Docs Cli, run the following command:
+To generate a README or create Commit using Doxs Cli, start with the following command:
 
 ```bash
-dox-cli generate
-```
-
-For committing your code, run:
-
-```bash
-dox-cli commit
+doxs
 ```
 
 ### Project Structure
@@ -50,12 +44,9 @@ dox-cli commit
 ├── index.js
 ├── generate.js
 ├── commit.js
-└── contributors
+├── readme.js
+└── analyze.js
 ```
-
-### API Documentation
-
-No API endpoints are currently available.
 
 ### Key Features
 
@@ -64,8 +55,7 @@ No API endpoints are currently available.
 *   Easy code committing
 
 ### Environment Variables
-
-No environment variables are currently required.
+Required ```GROQ_API_KEY``` or simply pass ```-k``` or ```--key``` parameter with the cli command .
 
 ### Contributing Guidelines
 

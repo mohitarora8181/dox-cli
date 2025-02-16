@@ -1,6 +1,6 @@
 {
   "name": "doxs",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "CLI tool for generating README and making perfect commits",
   "main": "index.js",
   "type": "commonjs",
@@ -10,8 +10,20 @@
   "bin": {
     "doxs": "./index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cli-tool",
+    "readme-generator",
+    "commit-message",
+    "git-automation",
+    "commit-generator",
+    "git-cli",
+    "developer-tool",
+    "automation",
+    "markdown-generator",
+    "emoji-commit",
+    "groq-api"
+  ],
+  "author": "MohitArora8181",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",

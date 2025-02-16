@@ -56,8 +56,8 @@ async function generateCommitName(diff, isEmoji, key) {
                     role: "user",
                     content: `Generate a **concise** and **meaningful** Git commit message from the given Git diff.  
                                 ### Rules:
-                                - Output **only** the commit message (no explanations).  
-                                - Keep it **under 50 characters**.  
+                                - Output **only** one single commit message (no explanations).  
+                                - Keep it **under 40 characters**.  
                                 - Use **imperative tone** (e.g., "Fix", "Add", "Improve", "Refactor").  
                                 - Follow **Conventional Commit format**: "<type>(<scope>): <message>".  
                                 - No additional text or formatting.  
