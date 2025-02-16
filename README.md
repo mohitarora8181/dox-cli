@@ -1,6 +1,6 @@
 # Doxs Cli
 ------------
-![Doxs Banner](./banner.png)
+![Doxs Banner](https://raw.githubusercontent.com/mohitarora8181/dox-cli/refs/heads/master/banner.png)
 
 A Command Line Interface Tool for Generating READMEs and Perfect Commits
 
